@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-  
-    <script type="text/javascript" src="main.js"></script>
-  </body>
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>✨ Self Care Center ✨</h1>
+  </header>
+  <h2><strong>Which type of message?</strong></h2>
+  <section class="message">
+    <form>
+      <input type="radio" id="affirm" name="message-choice" value="affirmations" /> <em>affirmation</em>
+      <input type="radio" id="mantra" name="message-choice" value="mantras"/> <em>mantra</em>
+    </form>
+    <button>Receive Message</button>
+  </section>
+  <section class="output">
+    <img src="/Users/tashiadavis/turing/mod1/projects/self-care-center/assets/meditate.svg" alt="person meditating icon">
+    <p class="message-text"></p>
+  </section>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+
 </html>
