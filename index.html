@@ -12,9 +12,15 @@
   </header>
   <h2><strong>Which type of message?</strong></h2>
   <section class="message">
-    <form>
-      <input type="radio" id="affirm" name="message-choice" value="affirmations" /> <em>affirmation</em>
-      <input type="radio" id="mantra" name="message-choice" value="mantras"/> <em>mantra</em>
+    <form class="message-options">
+      <fieldset>
+        <input id="affirmations" type="radio" name="message-choice" value="affirmations" />
+        <label id="affirmations-label" for="affirmations"><em>affirmation</em></label>
+      </fieldset>
+      <fieldset>
+        <input id="mantra" type="radio" name="message-choice" value="mantras" />
+        <label id="mantras-label" for="mantras"><em>mantra</em></label>
+      </fieldset>
     </form>
     <button>Receive Message</button>
   </section>
