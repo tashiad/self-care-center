@@ -57,9 +57,10 @@ function hideIcon() {
 
 function getRandomMessage() {
   for (var i = 0; i < inputs.length; i++) {
-    if (inputs[i].checked) {
-      messageText.innerText = getRandomIndex(inputs[i].value);
-      console.log(inputs[i].value);
+    if (inputs[i].checked === true) {
+      messageText.innerText = getRandomIndex(mantras);
+    } else {
+      messageText.innerText = getRandomIndex(affirmations);
     };
   };
   hideIcon();
