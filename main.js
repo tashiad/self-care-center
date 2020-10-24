@@ -1,3 +1,5 @@
+// 
+
 // query selector variables go here 👇
 var button = document.querySelector("button");
 var input = document.querySelector("input");
@@ -26,7 +28,6 @@ var mantras = [
   "Every day is a second chance.",
   "Tell the truth and love everyone.",
   "I am free from sadness.",
-  "I am enough.",
   "In the beginning it is you, in the middle it is you and in the end it is you.",
   "I love myself.",
   "I am present now.",
