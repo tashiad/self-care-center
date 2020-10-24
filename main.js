@@ -1,10 +1,8 @@
-// 
-
 // query selector variables go here 👇
+var inputs = document.querySelectorAll(".input");
 var button = document.querySelector("button");
-var input = document.querySelector("input");
 var messageText = document.querySelector(".message-text");
-var icon = document.querySelector("img");
+var icon = document.querySelector(".icon");
 
 // provided data 👇
 var affirmations = [
@@ -40,26 +38,29 @@ var mantras = [
 ];
 
 // global variables 👇
-var savedAffirmations = [];
-var savedMantras = [];
-var currentMessage;
+// var savedAffirmations = [];
+// var savedMantras = [];
+// var currentMessage;
 
 // event listeners go here 👇
-button.addEventListener("click", showRandomMessage);
+button.addEventListener("click", getRandomMessage);
 
 // functions and event handlers go here 👇
 function getRandomIndex(array) {
   return array[Math.floor(Math.random() * array.length)];
 };
 
-// PSEUDOCODE IT OUT!
-
-
-function showRandomMessage() {
-  if (input.value === "affirmations") {
-    messageText.innerText = getRandomIndex(affirmations);
-  } else if (input.value === "mantras") {
-    messageText.innerText = getRandomIndex(mantras);
-  }
+function hideIcon() {
   icon.classList.add("hidden");
+  messageText.classList.remove("hidden");
+};
+
+function getRandomMessage() {
+  for (var i = 0; i < inputs.length; i++) {
+    if (inputs[i].checked) {
+      messageText.innerText = getRandomIndex(inputs[i].value);
+      console.log(inputs[i].value);
+    };
+  };
+  hideIcon();
 };

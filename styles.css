@@ -77,6 +77,8 @@ button:hover {
   min-height: 135px;
   display: flex;
   justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .messageText {
