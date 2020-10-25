@@ -1,5 +1,6 @@
 // query selector variables go here 👇
-var inputs = document.querySelectorAll(".input");
+var affirmationsChoice = document.querySelector("#affirmations");
+var mantrasChoice = document.querySelector("#mantras");
 var receiveButton = document.querySelector("#receive");
 var clearButton = document.querySelector("#clear");
 var messageText = document.querySelector(".message-text");
@@ -55,39 +56,26 @@ function showHide(show, hide) {
   hide.classList.add("hidden");
 };
 
-// // THIS ONE SHOWS THE RIGHT MESSAGE:
-// function getRandomMessage() {
-//   for (var i = 0; i < inputs.length; i++) {
-//     if (inputs[i].checked) {
-//       messageText.innerText = getRandomIndex(mantras);
-//     } else {
-//       messageText.innerText = getRandomIndex(affirmations);
-//     };
-//   };
-//   showHide(messageText, icon);
-//   clearButton.classList.remove("hidden");
-// };
-
 function showMessage() {
-  showHide(messageText, icon); // remove icon, show message
-  showHide(clearButton, errorMessage); // remove error message, reveal clear button
-}
+  showHide(messageText, icon);
+  showHide(clearButton, errorMessage);
+};
 
 function clearMessage() {
   showHide(icon, messageText);
   errorMessage.classList.add("hidden");
   clearButton.classList.add("hidden");
-}
+};
 
-// // ERROR MESSAGE & REFACTOR ATTEMPT
+// REFACTOR THIS
 function getRandomMessage() {
-  for (var i = 0; i < inputs.length; i++) { // loop over each radio input
-    if (inputs[i].checked) { // if either input is checked
-      messageText.innerText = getRandomIndex(inputs[i].value); // get random message for the checked value
-      showMessage(); // reveal clear button, remove error message (if there is one)
-      console.log(inputs[i].value); // WHY ISN'T THIS COMING THROUGH ABOVE???
-    } else {
-      errorMessage.classList.remove("hidden"); // if neither input has been checked, disable "Receive Message" button and show red error message
-    };
+  if (mantrasChoice.checked) {
+    messageText.innerText = getRandomIndex(mantras);
+    showMessage();
+  } else if (affirmationsChoice.checked) {
+    messageText.innerText = getRandomIndex(affirmations);
+    showMessage();
+  } else {
+    errorMessage.classList.remove("hidden");
   };
 };

@@ -2,6 +2,8 @@
   font-family: 'Quicksand', sans-serif;
   margin: auto;
   text-align: center;
+  /* min-height: 100%
+  margin: 0px; */
 }
 
 body {
@@ -10,7 +12,7 @@ body {
 }
 
 .hidden {
-  display: none !important;
+  display: none;
 }
 
 header {
@@ -79,10 +81,12 @@ button {
 
 button#receive:hover {
   box-shadow: inset 0px 0px 10px #000000;
+  /* transform: scale(0.8); */
 }
 
 button#clear:hover {
   box-shadow: 0px 0px 10px #000000;
+  /* transform: scale(0.8); */
 }
 
 .output {
@@ -98,7 +102,13 @@ button#clear:hover {
 
 .messageText {
   font-size: 24px;
+  /* animation: fadeIn ease 5s; */
 }
+
+/* @keyframes fadeIn {
+  0% {opacity:0;};
+  100% {opacity:1;};
+} */
 
 img {
   max-height: 75px;
