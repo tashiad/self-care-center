@@ -1,10 +1,13 @@
 // query selector variables go here 👇
-var inputs = document.querySelectorAll(".input");
-var button = document.querySelector("button");
+var affirmationsChoice = document.querySelector("#affirmations");
+var mantrasChoice = document.querySelector("#mantras");
+var receiveButton = document.querySelector("#receive");
+var clearButton = document.querySelector("#clear");
 var messageText = document.querySelector(".message-text");
+var errorMessage = document.querySelector(".error");
 var icon = document.querySelector(".icon");
 
-// provided data 👇
+// provided data/global variables 👇
 var affirmations = [
   "I forgive myself and set myself free.",
   "I believe I can be all that I want to be.",
@@ -37,31 +40,39 @@ var mantras = [
   "I am the sky, the rest is weather."
 ];
 
-// global variables 👇
-// var savedAffirmations = [];
-// var savedMantras = [];
-// var currentMessage;
-
 // event listeners go here 👇
-button.addEventListener("click", getRandomMessage);
+receiveButton.addEventListener("click", getRandomMessage);
+clearButton.addEventListener("click", clearMessage);
 
 // functions and event handlers go here 👇
 function getRandomIndex(array) {
   return array[Math.floor(Math.random() * array.length)];
 };
 
-function hideIcon() {
-  icon.classList.add("hidden");
-  messageText.classList.remove("hidden");
+function showHide(show, hide) {
+  show.classList.remove("hidden");
+  hide.classList.add("hidden");
+};
+
+function showMessage() {
+  showHide(messageText, icon);
+  showHide(clearButton, errorMessage);
+};
+
+function clearMessage() {
+  showHide(icon, messageText);
+  errorMessage.classList.add("hidden");
+  clearButton.classList.add("hidden");
 };
 
 function getRandomMessage() {
-  for (var i = 0; i < inputs.length; i++) {
-    if (inputs[i].checked === true) {
-      messageText.innerText = getRandomIndex(mantras);
-    } else {
-      messageText.innerText = getRandomIndex(affirmations);
-    };
+  if (mantrasChoice.checked) {
+    messageText.innerText = getRandomIndex(mantras);
+    showMessage();
+  } else if (affirmationsChoice.checked) {
+    messageText.innerText = getRandomIndex(affirmations);
+    showMessage();
+  } else {
+    errorMessage.classList.remove("hidden");
   };
-  hideIcon();
 };

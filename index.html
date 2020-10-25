@@ -10,19 +10,23 @@
   <header>
     <h1>✨ Self Care Center ✨</h1>
   </header>
-  <h2><strong>Which type of message?</strong></h2>
-  <section class="message">
-    <form>
-      <fieldset>
-        <input class="input" id="affirmations" type="radio" name="message-choice" value="affirmations">
-        <label id="affirmations-label" for="affirmations"><em>affirmation</em></label>
-      </fieldset>
-      <fieldset>
-        <input class="input" id="mantras" type="radio" name="message-choice" value="mantras">
-        <label id="mantras-label" for="mantras"><em>mantra</em></label>
-      </fieldset>
-    </form>
-    <button>Receive Message</button>
+  <section class="form-section">
+    <h2><strong>Which type of message?</strong></h2>
+    <section class="message">
+      <form>
+        <fieldset>
+          <input class="input" id="affirmations" type="radio" name="message-choice" value="affirmations">
+          <label id="affirmations-label" for="affirmations"><em>affirmation</em></label>
+        </fieldset>
+        <fieldset>
+          <input class="input" id="mantras" type="radio" name="message-choice" value="mantras">
+          <label id="mantras-label" for="mantras"><em>mantra</em></label>
+        </fieldset>
+      </form>
+      <button id="receive">Receive Message</button>
+      <button class="hidden" id="clear">Clear</button>
+      <p class="error hidden"><em>Please check an option above to show a message!</em></p>
+    </section>
   </section>
   <section class="output">
     <img class="icon" src="/Users/tashiadavis/turing/mod1/projects/self-care-center/assets/meditate.svg" alt="person meditating icon">
