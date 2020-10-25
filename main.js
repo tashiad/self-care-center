@@ -1,6 +1,7 @@
 // query selector variables go here 👇
 var inputs = document.querySelectorAll(".input");
-var button = document.querySelector("button");
+var receiveButton = document.querySelector("#receive");
+var clearButton = document.querySelector("#clear");
 var messageText = document.querySelector(".message-text");
 var icon = document.querySelector(".icon");
 
@@ -43,25 +44,45 @@ var mantras = [
 // var currentMessage;
 
 // event listeners go here 👇
-button.addEventListener("click", getRandomMessage);
+receiveButton.addEventListener("click", getRandomMessage);
+clearButton.addEventListener("click", clearMessage);
 
 // functions and event handlers go here 👇
 function getRandomIndex(array) {
   return array[Math.floor(Math.random() * array.length)];
 };
 
-function hideIcon() {
-  icon.classList.add("hidden");
-  messageText.classList.remove("hidden");
+function showHide(show, hide) {
+  show.classList.remove("hidden");
+  hide.classList.add("hidden");
 };
+
+// // REFACTOR ATTEMPT
+// function changeInnerText(type) {
+//   messageText.innerText = getRandomIndex(type);
+// }
 
 function getRandomMessage() {
   for (var i = 0; i < inputs.length; i++) {
-    if (inputs[i].checked === true) {
+    if (inputs[i].checked) {
       messageText.innerText = getRandomIndex(mantras);
     } else {
       messageText.innerText = getRandomIndex(affirmations);
     };
   };
-  hideIcon();
+  showHide(messageText, icon);
 };
+
+// // REFACTOR ATTEMPT
+// function getRandomMessage() {
+//   for (var i = 0; i < inputs.length; i++) {
+//     if (inputs[i].checked) {
+//       changeInnerText(inputs[i].value);
+//     }
+//   };
+//   showHide(messageText, icon);
+// };
+
+function clearMessage() {
+  showHide(icon, messageText);
+}

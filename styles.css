@@ -65,9 +65,19 @@ button {
   padding: 3px 25px;
 }
 
-button:hover {
+#clear {
   color: #134d71;
   background-color: #ffffff;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+button#receive:hover {
+  box-shadow: inset 0px 0px 10px #000000;
+}
+
+button#clear:hover {
+  box-shadow: 0px 0px 10px #000000;
 }
 
 .output {
