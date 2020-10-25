@@ -1,4 +1,4 @@
-// query selector variables go here 👇
+// query selector variables 👇
 var affirmationsChoice = document.querySelector("#affirmations");
 var mantrasChoice = document.querySelector("#mantras");
 var receiveButton = document.querySelector("#receive");
@@ -40,11 +40,11 @@ var mantras = [
   "I am the sky, the rest is weather."
 ];
 
-// event listeners go here 👇
+// event listeners 👇
 receiveButton.addEventListener("click", getRandomMessage);
 clearButton.addEventListener("click", clearMessage);
 
-// functions and event handlers go here 👇
+// functions and event handlers 👇
 function getRandomIndex(array) {
   return array[Math.floor(Math.random() * array.length)];
 };
