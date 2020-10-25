@@ -1,14 +1,11 @@
 * {
   font-family: 'Quicksand', sans-serif;
-  /* margin: auto;
-  text-align: center; */
   margin: 0px;
 }
 
 body {
   background: linear-gradient(#134d71, #78a7c6, #f7e4bf) no-repeat center center fixed;
   background-size: cover;
-
   height: 80vh;
   display: flex;
   flex-direction: column;
@@ -18,11 +15,6 @@ body {
 
 .hidden {
   display: none;
-}
-
-header {
-  /* margin-top: 50px;
-  margin-bottom: 10%; */
 }
 
 h1, h2 {
@@ -36,6 +28,7 @@ p {
 .error {
   color: red;
   padding: 5px;
+  text-align: center;
 }
 
 .form-section {
@@ -49,9 +42,8 @@ p {
 .message {
   background-color: #ffffff;
   border-radius: 10px;
-  padding-top: 10px;
-  /* margin-top: 15px;
-  margin-bottom: 50px; */
+  padding-top: 5px;
+  margin-top: 15px;
   width: 50%;
   min-height: 90px;
   display: flex;
@@ -64,7 +56,6 @@ form {
   display: flex;
   justify-content: space-between;
   width: 80%;
-  padding: 5px;
 }
 
 fieldset {
@@ -79,53 +70,48 @@ fieldset {
   padding-left: 10px;
 }
 
+.buttons {
+  display: flex;
+}
+
 button {
   color: #ffffff;
   background-color: #134d71;
   border-color: #134d71;
   border-radius: 4px;
   padding: 3px 25px;
+  margin: 5px;
 }
 
 #clear {
   color: #134d71;
   background-color: #ffffff;
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 
 button#receive:hover {
   box-shadow: inset 0px 0px 10px #000000;
-  /* transform: scale(0.8); */
 }
 
 button#clear:hover {
   box-shadow: 0px 0px 10px #000000;
-  /* transform: scale(0.8); */
 }
 
 .output {
-  /* margin-top: 10%;
-  margin-bottom: 150px; */
   background-color: #ffffff;
   border-radius: 10px;
   width: 70%;
   min-height: 135px;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding-left: 20px;
   padding-right: 20px;
+  text-align: center;
 }
 
 .messageText {
   font-size: 24px;
-  /* animation: fadeIn ease 5s; */
 }
-
-/* @keyframes fadeIn {
-  0% {opacity:0;};
-  100% {opacity:1;};
-} */
 
 img {
   max-height: 75px;
