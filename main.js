@@ -7,7 +7,7 @@ var messageText = document.querySelector(".message-text");
 var errorMessage = document.querySelector(".error");
 var icon = document.querySelector(".icon");
 
-// provided data 👇
+// provided data/global variables 👇
 var affirmations = [
   "I forgive myself and set myself free.",
   "I believe I can be all that I want to be.",
@@ -40,8 +40,6 @@ var mantras = [
   "I am the sky, the rest is weather."
 ];
 
-// global variables 👇
-
 // event listeners go here 👇
 receiveButton.addEventListener("click", getRandomMessage);
 clearButton.addEventListener("click", clearMessage);
@@ -67,7 +65,6 @@ function clearMessage() {
   clearButton.classList.add("hidden");
 };
 
-// REFACTOR THIS
 function getRandomMessage() {
   if (mantrasChoice.checked) {
     messageText.innerText = getRandomIndex(mantras);
