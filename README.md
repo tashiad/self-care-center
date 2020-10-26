@@ -43,11 +43,29 @@ The spec for this project can be found [here](https://frontend.turing.io/project
 <hr/>
 
 ### Choose your own Adventure
-Students had the opportunity to choose one additional feature from a list of options. Considerations for this choice included which features align with your strengths, which features would challenge you to grow, and which features you'd find to be useful in this application. I chose to add error handling and a clear button, which involved the following functionality:  
+Students had to choose at least one additional feature from a list of options. Considerations for this choice included which features align with your strengths, which features would challenge you to grow, and which features you'd find to be useful in this application. I chose to do the following:
+
+#### Error handling and a clear button
 - User should not be able to click the "Receive Message" button unless they have selected a message option.
 - The user can click a clear button, which clears the page of any message .
 - User should only be able to click the clear button if a message is visible.
 - When the clear button is clicked and the message is removed, the image of the meditation icon should re-appear.
+
+#### Login Page
+- Refactor your application so that the user lands on a "Login" page
+- The login page should match the style of the application.
+- The login page should contain an input for a user to enter their name, and a button to submit.
+- After the user clicks the submit button, they should be taken to the main application page, and see a personalized greeting that displays their name and some sort of welcome message.
+- The welcome message and name should appear in a logical place of your choosing.
+
+#### CSS Animations  
+**I was able to get to the following:**  
+- Make your buttons grow in size or change color when the user hovers over them, enticing them to click the dang thing.
+- When the message appears, the text should fade in, from white to black to deliver the message in a calming way.
+
+**Will try to finish these up if I have the time:**  
+- Add a loading animation when a user clicks the "Receive Message" button to simulate searching for a message. Hint - You will need to use CSS Keyframes, and a Javascript timeout function for this.
+- Have the background change depending on if a user has selected an affirmation or mantra. Choose a calming secondary gradient for each type of message Remember your user experience and animate this in gradually!
 
 <hr/>
 
@@ -80,19 +98,6 @@ Students had the opportunity to choose one additional feature from a list of opt
 - Add a "View All Messages" button.
 - When that button is clicked, the user is taken to a new pages that displays all messages, sorted by message type.
 - On this page, user should have the ability to add/edit/delete messages.
-
-#### CSS Animations
-- Add a loading animation when a user clicks the "Receive Message" button to simulate searching for a message. Hint - You will need to use CSS Keyframes, and a Javascript timeout function for this.
-- Make your buttons grow in size or change color when the user hovers over them, enticing them to click the dang thing.
-- When the message appears, the text should fade in, from white to black to deliver the message in a calming way.
-- Have the background change depending on if a user has selected an affirmation or mantra. Choose a calming secondary gradient for each type of message Remember your user experience and animate this in gradually!
-
-#### Login Page
-- Refactor your application so that the user lands on a "Login" page
-- The login page should match the style of the application.
-- The login page should contain an input for a user to enter their name, and a button to submit.
-- After the user clicks the submit button, they should be taken to the main application page, and see a personalized greeting that displays their name and some sort of welcome message.
-- The welcome message and name should appear in a logical place of your choosing.
 
 #### Responsive Design
 - Do some research and determine how to make your app respond to the user's screen size.
