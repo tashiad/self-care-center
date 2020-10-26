@@ -41,6 +41,7 @@ var mantras = [
 ];
 
 // event listeners 👇
+// window.addEventListener("load", showLogin);
 receiveButton.addEventListener("click", getRandomMessage);
 clearButton.addEventListener("click", clearMessage);
 
