@@ -21,8 +21,19 @@ h1, h2 {
   color: #ffffff;
 }
 
-p {
-  color: #000000;
+.login {
+  display: flex;
+  flex-direction: column;;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  padding-top: 10px;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
 }
 
 .error {
@@ -31,12 +42,12 @@ p {
   text-align: center;
 }
 
-.form-section {
+.message-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%
+  width: 100%;
 }
 
 .message {
@@ -56,6 +67,7 @@ form {
   display: flex;
   justify-content: space-between;
   width: 80%;
+  color: #000000;
 }
 
 fieldset {
@@ -111,6 +123,7 @@ button#clear:hover {
 
 .messageText {
   font-size: 24px;
+  color: #000000;
 }
 
 img {

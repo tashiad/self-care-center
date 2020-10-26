@@ -10,7 +10,15 @@
   <header>
     <h1>✨ Self Care Center ✨</h1>
   </header>
-  <section class="form-section">
+  <section class="login">
+    <h2>Welcome! Enter your name to log in.</h2>
+    <form class="login-form">
+      <p>Name:
+        <input type="text" name="name" size="15" maxlength="40" />
+      </p>
+    </form>
+  </section>
+  <section class="message-form hidden">
     <h2><strong>Which type of message?</strong></h2>
     <section class="message">
       <form>
@@ -30,7 +38,7 @@
       <p class="error hidden"><em>Please check an option above to show a message!</em></p>
     </section>
   </section>
-  <section class="output">
+  <section class="output hidden">
     <img class="icon" src="https://raw.githubusercontent.com/tashiad/self-care-center/133b1be52da4baf708d29431427eb20ce8d6f0ee/assets/meditate.svg" alt="person meditating icon">
     <p class="message-text hidden"></p>
   </section>
