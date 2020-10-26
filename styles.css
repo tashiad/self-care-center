@@ -11,10 +11,11 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  text-align: center;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 h1, h2 {
@@ -23,7 +24,8 @@ h1, h2 {
 
 .login {
   display: flex;
-  flex-direction: column;;
+  flex-direction: column;
+  ;
   justify-content: center;
   align-items: center;
 }
@@ -54,6 +56,20 @@ h1, h2 {
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+#greeting, .message-text {
+  animation: fadeIn ease 5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .message {

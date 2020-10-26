@@ -6,6 +6,12 @@ var clearButton = document.querySelector("#clear");
 var messageText = document.querySelector(".message-text");
 var errorMessage = document.querySelector(".error");
 var icon = document.querySelector(".icon");
+var messageForm = document.querySelector(".message-form");
+var output = document.querySelector(".output");
+var enterButton = document.querySelector("#enter");
+var login = document.querySelector(".login");
+var greeting = document.querySelector("#greeting");
+var loginName = document.querySelector(".name");
 
 // provided data/global variables 👇
 var affirmations = [
@@ -41,11 +47,25 @@ var mantras = [
 ];
 
 // event listeners 👇
-// window.addEventListener("load", showLogin);
+enterButton.addEventListener("click", showMain);
 receiveButton.addEventListener("click", getRandomMessage);
 clearButton.addEventListener("click", clearMessage);
 
 // functions and event handlers 👇
+function showLogin() {
+  messageForm.classList.add("hidden");
+  output.classList.add("hidden");
+}
+
+function showMain() {
+  login.classList.add("hidden");
+  messageForm.classList.remove("hidden");
+  output.classList.remove("hidden");
+  event.preventDefault();
+  var username = loginName.value;
+  greeting.innerText = `Welcome, ${username}! Which type of message would you like today?`
+}
+
 function getRandomIndex(array) {
   return array[Math.floor(Math.random() * array.length)];
 };
