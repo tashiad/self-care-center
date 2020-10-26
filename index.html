@@ -10,8 +10,19 @@
   <header>
     <h1>✨ Self Care Center ✨</h1>
   </header>
-  <section class="form-section">
-    <h2><strong>Which type of message?</strong></h2>
+  <section class="login">
+    <img class="icon-login" src="https://raw.githubusercontent.com/tashiad/self-care-center/133b1be52da4baf708d29431427eb20ce8d6f0ee/assets/meditate.svg" alt="person meditating icon">
+    <h2 class="welcome">Welcome! Enter your name to log in.</h2>
+    <form class="login-form">
+      <p id="name-label">Name:
+        <input type="text" name="login-name" class="login-name" />
+      </p>
+      <button id="enter">Enter</button>
+      <p class="error hidden" id="login-error">Type your name in the field above to enter!</p>
+    </form>
+  </section>
+  <section class="message-form hidden">
+    <h2 id="greeting"><strong>Which type of message?</strong></h2>
     <section class="message">
       <form>
         <fieldset>
@@ -27,10 +38,10 @@
         <button id="receive">Receive Message</button>
         <button class="hidden" id="clear">Clear</button>
       </section>
-      <p class="error hidden"><em>Please check an option above to show a message!</em></p>
+      <p class="error hidden" id="message-error">Please check an option above to show a message!</p>
     </section>
   </section>
-  <section class="output">
+  <section class="output hidden">
     <img class="icon" src="https://raw.githubusercontent.com/tashiad/self-care-center/133b1be52da4baf708d29431427eb20ce8d6f0ee/assets/meditate.svg" alt="person meditating icon">
     <p class="message-text hidden"></p>
   </section>

@@ -1,3 +1,4 @@
+/* OVERARCHING STYLES */
 * {
   font-family: 'Quicksand', sans-serif;
   margin: 0px;
@@ -11,32 +12,111 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-}
-
-.hidden {
-  display: none;
+  text-align: center;
 }
 
 h1, h2 {
   color: #ffffff;
 }
 
-p {
-  color: #000000;
+.hidden {
+  display: none !important;
 }
 
 .error {
   color: red;
   padding: 5px;
   text-align: center;
+  font-style: italic;
 }
 
-.form-section {
+/* BUTTON STYLES */
+button {
+  color: #ffffff;
+  background-color: #134d71;
+  border-color: #134d71;
+  border-radius: 4px;
+  padding: 3px 25px;
+  margin: 5px;
+}
+
+#clear, #enter {
+  color: #134d71;
+  background-color: #ffffff;
+}
+
+button#receive:hover {
+  box-shadow: inset 0px 0px 10px #000000;
+}
+
+button#clear:hover {
+  box-shadow: 0px 0px 10px #000000;
+}
+
+button#enter:hover {
+  box-shadow: 0px 0px 10px #000000;
+}
+
+/* LOGIN PAGE STYLES */
+.login {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%
+}
+
+.login-form {
+  padding-top: 10px;
+  color: #134d71;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding-top: 5px;
+  margin-top: 15px;
+}
+
+.welcome {
+  margin-top: 20px;
+}
+
+#name-label {
+  padding: 20px;
+}
+
+#enter {
+  margin-bottom: 20px;
+}
+
+#login-error {
+  font-weight: normal;
+  padding: 5px;
+}
+
+/* MAIN PAGE STYLES: FORM */
+#greeting, .message-text {
+  animation: fadeIn ease 5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.message-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .message {
@@ -56,6 +136,7 @@ form {
   display: flex;
   justify-content: space-between;
   width: 80%;
+  color: #000000;
 }
 
 fieldset {
@@ -74,28 +155,7 @@ fieldset {
   display: flex;
 }
 
-button {
-  color: #ffffff;
-  background-color: #134d71;
-  border-color: #134d71;
-  border-radius: 4px;
-  padding: 3px 25px;
-  margin: 5px;
-}
-
-#clear {
-  color: #134d71;
-  background-color: #ffffff;
-}
-
-button#receive:hover {
-  box-shadow: inset 0px 0px 10px #000000;
-}
-
-button#clear:hover {
-  box-shadow: 0px 0px 10px #000000;
-}
-
+/* MAIN PAGE STYLES: OUTPUT */
 .output {
   background-color: #ffffff;
   border-radius: 10px;
@@ -111,6 +171,7 @@ button#clear:hover {
 
 .messageText {
   font-size: 24px;
+  color: #000000;
 }
 
 img {

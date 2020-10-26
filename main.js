@@ -4,8 +4,15 @@ var mantrasChoice = document.querySelector("#mantras");
 var receiveButton = document.querySelector("#receive");
 var clearButton = document.querySelector("#clear");
 var messageText = document.querySelector(".message-text");
-var errorMessage = document.querySelector(".error");
+var errorMessage = document.querySelector("#message-error");
 var icon = document.querySelector(".icon");
+var messageForm = document.querySelector(".message-form");
+var output = document.querySelector(".output");
+var enterButton = document.querySelector("#enter");
+var login = document.querySelector(".login");
+var greeting = document.querySelector("#greeting");
+var loginName = document.querySelector(".login-name");
+var loginError = document.querySelector("#login-error");
 
 // provided data/global variables 👇
 var affirmations = [
@@ -41,10 +48,28 @@ var mantras = [
 ];
 
 // event listeners 👇
+enterButton.addEventListener("click", showMain);
 receiveButton.addEventListener("click", getRandomMessage);
 clearButton.addEventListener("click", clearMessage);
 
 // functions and event handlers 👇
+function showLogin() {
+  messageForm.classList.add("hidden");
+  output.classList.add("hidden");
+}
+
+function showMain() {
+  event.preventDefault();
+  var username = loginName.value;
+  if (username === "") {
+    loginError.classList.remove("hidden");
+  } else {
+    showHide(messageForm, login);
+    showHide(output, loginError);
+    greeting.innerText = `Welcome, ${username}! Which type of message would you like today?`
+  }
+}
+
 function getRandomIndex(array) {
   return array[Math.floor(Math.random() * array.length)];
 };
@@ -52,11 +77,6 @@ function getRandomIndex(array) {
 function showHide(show, hide) {
   show.classList.remove("hidden");
   hide.classList.add("hidden");
-};
-
-function showMessage() {
-  showHide(messageText, icon);
-  showHide(clearButton, errorMessage);
 };
 
 function clearMessage() {
@@ -68,10 +88,12 @@ function clearMessage() {
 function getRandomMessage() {
   if (mantrasChoice.checked) {
     messageText.innerText = getRandomIndex(mantras);
-    showMessage();
+    showHide(messageText, icon);
+    showHide(clearButton, errorMessage);
   } else if (affirmationsChoice.checked) {
     messageText.innerText = getRandomIndex(affirmations);
-    showMessage();
+    showHide(messageText, icon);
+    showHide(clearButton, errorMessage);
   } else {
     errorMessage.classList.remove("hidden");
   };
