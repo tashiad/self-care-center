@@ -27,6 +27,7 @@ h1, h2 {
   color: red;
   padding: 5px;
   text-align: center;
+  font-style: italic;
 }
 
 /* BUTTON STYLES */
@@ -66,16 +67,33 @@ button#enter:hover {
 
 .login-form {
   padding-top: 10px;
-  color: #FFFFFF;
+  color: #134d71;
   font-weight: bold;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding-top: 5px;
+  margin-top: 15px;
+}
+
+.welcome {
+  margin-top: 20px;
+}
+
+#name-label {
+  padding: 20px;
 }
 
 #enter {
-  margin: 10px;
+  margin-bottom: 20px;
+}
+
+#login-error {
+  font-weight: normal;
+  padding: 5px;
 }
 
 /* MAIN PAGE STYLES: FORM */
