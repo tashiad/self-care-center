@@ -64,10 +64,8 @@ function showMain() {
   if (username === "") {
     loginError.classList.remove("hidden");
   } else {
-    login.classList.add("hidden");
-    loginError.classList.add("hidden");
-    messageForm.classList.remove("hidden");
-    output.classList.remove("hidden");
+    showHide(messageForm, login);
+    showHide(output, loginError);
     greeting.innerText = `Welcome, ${username}! Which type of message would you like today?`
   }
 }
@@ -81,11 +79,6 @@ function showHide(show, hide) {
   hide.classList.add("hidden");
 };
 
-function showMessage() {
-  showHide(messageText, icon);
-  showHide(clearButton, errorMessage);
-};
-
 function clearMessage() {
   showHide(icon, messageText);
   errorMessage.classList.add("hidden");
@@ -95,10 +88,12 @@ function clearMessage() {
 function getRandomMessage() {
   if (mantrasChoice.checked) {
     messageText.innerText = getRandomIndex(mantras);
-    showMessage();
+    showHide(messageText, icon);
+    showHide(clearButton, errorMessage);
   } else if (affirmationsChoice.checked) {
     messageText.innerText = getRandomIndex(affirmations);
-    showMessage();
+    showHide(messageText, icon);
+    showHide(clearButton, errorMessage);
   } else {
     errorMessage.classList.remove("hidden");
   };
