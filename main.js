@@ -1,21 +1,21 @@
-// query selector variables 👇
-var affirmationsChoice = document.querySelector("#affirmations");
-var mantrasChoice = document.querySelector("#mantras");
-var receiveButton = document.querySelector("#receive");
-var clearButton = document.querySelector("#clear");
-var messageText = document.querySelector(".message-text");
-var errorMessage = document.querySelector("#message-error");
-var icon = document.querySelector(".icon");
-var messageForm = document.querySelector(".message-form");
-var output = document.querySelector(".output");
-var enterButton = document.querySelector("#enter");
-var login = document.querySelector(".login");
-var greeting = document.querySelector("#greeting");
-var loginName = document.querySelector(".login-name");
-var loginError = document.querySelector("#login-error");
+// query selector letiables 👇
+let affirmationsChoice = document.querySelector("#affirmations");
+let mantrasChoice = document.querySelector("#mantras");
+let receiveButton = document.querySelector("#receive");
+let clearButton = document.querySelector("#clear");
+let messageText = document.querySelector(".message-text");
+let errorMessage = document.querySelector("#message-error");
+let icon = document.querySelector(".icon");
+let messageForm = document.querySelector(".message-form");
+let output = document.querySelector(".output");
+let enterButton = document.querySelector("#enter");
+let login = document.querySelector(".login");
+let greeting = document.querySelector("#greeting");
+let loginName = document.querySelector(".login-name");
+let loginError = document.querySelector("#login-error");
 
-// provided data/global variables 👇
-var affirmations = [
+// provided data/global letiables 👇
+let affirmations = [
   "I forgive myself and set myself free.",
   "I believe I can be all that I want to be.",
   "I am in the process of becoming the best version of myself.",
@@ -30,7 +30,7 @@ var affirmations = [
   "I honor my body by trusting the signals that it sends me.",
   "I manifest perfect health by making smart choices."
 ];
-var mantras = [
+let mantras = [
   "Breathing in, I send myself love. Breathing out, I send love to someone else who needs it.",
   "Don’t let yesterday take up too much of today.",
   "Every day is a second chance.",
@@ -48,53 +48,51 @@ var mantras = [
 ];
 
 // event listeners 👇
-enterButton.addEventListener("click", showMain);
+enterButton.addEventListener("click", checkLogin);
 receiveButton.addEventListener("click", getRandomMessage);
 clearButton.addEventListener("click", clearMessage);
 
 // functions and event handlers 👇
-function showLogin() {
-  messageForm.classList.add("hidden");
-  output.classList.add("hidden");
+function checkLogin(event) {
+  event.preventDefault();
+  let username = loginName.value;
+  !username ? loginError.classList.remove("hidden") : showMain(username);
 }
 
-function showMain() {
-  event.preventDefault();
-  var username = loginName.value;
-  if (username === "") {
-    loginError.classList.remove("hidden");
+const showMain = username => {
+  showHide(messageForm, login);
+  showHide(output, loginError);
+  greeting.innerText =
+    `Welcome, ${username}! Which type of message would you like today?`;
+}
+
+const getRandomIndex = array => {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
+const showHide = (show, hide) => {
+  show.classList.remove("hidden");
+  hide.classList.add("hidden");
+}
+
+function getRandomMessage() {
+  if (mantrasChoice.checked) {
+    getMessageChoice(mantras);
+  } else if (affirmationsChoice.checked) {
+    getMessageChoice(affirmations);
   } else {
-    showHide(messageForm, login);
-    showHide(output, loginError);
-    greeting.innerText = `Welcome, ${username}! Which type of message would you like today?`
+    errorMessage.classList.remove("hidden");
   }
 }
 
-function getRandomIndex(array) {
-  return array[Math.floor(Math.random() * array.length)];
-};
-
-function showHide(show, hide) {
-  show.classList.remove("hidden");
-  hide.classList.add("hidden");
-};
+const getMessageChoice = type => {
+  messageText.innerText = getRandomIndex(type);
+  showHide(messageText, icon);
+  showHide(clearButton, errorMessage);
+}
 
 function clearMessage() {
   showHide(icon, messageText);
   errorMessage.classList.add("hidden");
   clearButton.classList.add("hidden");
-};
-
-function getRandomMessage() {
-  if (mantrasChoice.checked) {
-    messageText.innerText = getRandomIndex(mantras);
-    showHide(messageText, icon);
-    showHide(clearButton, errorMessage);
-  } else if (affirmationsChoice.checked) {
-    messageText.innerText = getRandomIndex(affirmations);
-    showHide(messageText, icon);
-    showHide(clearButton, errorMessage);
-  } else {
-    errorMessage.classList.remove("hidden");
-  };
-};
+}
